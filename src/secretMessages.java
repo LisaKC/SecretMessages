@@ -11,24 +11,13 @@ public class secretMessages {
 		String message = in.nextLine();
 		//create a variable called out for the reversed string, make it empty
 		String output ="";
-		//create character variable called key for decoding caeser coder
-		char key = 13;
-		//use a for loop to go through each string character - start to end
-		for (int i = 0; i<message.length(); i++) {
-			//get the next character from the message
-			char input = message.charAt(i);
-			//check to make sure it's a letter
-			if (input >='A' && input <='Z') {
-				//encode the letter by adding the key to it
-				input += key;
-				//check whether adding the key value pushes the letter past Z
-				if (input > 'Z') {
-					//subtract 26 from the encoded input value so it wraps around to the front of the alphabet
-					input -= 26;
-				}
-			}
-			//add the resulting input value to the output string
-			output += input;
+		//use a for loop to run through each character in the message - end to start
+		//initialize a variable i to the index of last character in string
+		//loop through characters from last to first in reverse order
+		for (int i=message.length()-1; i>=0; i--) {
+			//get the character at each index position in the string
+			//add the character to the string output using +
+			output += message.charAt(i);
 		}
 		//display the message from the for loop
 		System.out.println(output);
